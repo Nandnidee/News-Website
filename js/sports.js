@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const key = "0fc2e6c3ab9b4bac94c0ce7230604d1f";
-    const url = "https://newsapi.org/v2/everything?q=";
+    const key = "9639faf63445cfff0595422d24ff4237";
+    const url = "https://gnews.io/api/v4/search?q=";
     const placeholderImage = "https://media.istockphoto.com/id/1396814518/vector/image-coming-soon-no-photo-no-thumbnail-image-available-vector-illustration.jpg?s=2048x2048&w=is&k=20&c=b9S9F5NT9TWeFZE8XGGdIu3FucUa2Nm9MAXIgkj-FnA=";
 
     fetchData('sports');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         card_container.innerHTML = '';
 
 
-        const limitedArticles = articles.slice(4, 12);
+        const limitedArticles = articles.slice(2, 10);
 
         limitedArticles.forEach(article => {
             const clone = card.content.cloneNode(true);
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const slideClone = slideTemplate.content.cloneNode(true);
             const slideImg = slideClone.querySelector('#slide');
             const slideText = slideClone.querySelector('.text');
-            slideImg.src = article.urlToImage || placeholderImage;
+            slideImg.src = article.image || placeholderImage;
             slideText.textContent = article.title;
             slideClone.querySelector('.mySlides').classList.add('fade');
             slideshowContainer.appendChild(slideClone);
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const image = cardclone.querySelector('#news-img');
 
         newtitle.textContent = article.title;
-        image.src = article.urlToImage || placeholderImage;
+        image.src = article.image || placeholderImage;
 
         cardclone.firstElementChild.addEventListener("click", () => {
             window.open(article.url, "_blank");

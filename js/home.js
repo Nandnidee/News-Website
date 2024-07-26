@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const firstVideoTitle = playlistItems[0].querySelector('h3').textContent;
     setActiveVideo(firstVideoId, firstVideoTitle);
 
-    const key = "0fc2e6c3ab9b4bac94c0ce7230604d1f";
-    const url = "https://newsapi.org/v2/everything?q=";
+    const key = "9639faf63445cfff0595422d24ff4237";
+    const url = "https://gnews.io/api/v4/search?q=";
     const placeholderImage = "https://media.istockphoto.com/id/1396814518/vector/image-coming-soon-no-photo-no-thumbnail-image-available-vector-illustration.jpg?s=2048x2048&w=is&k=20&c=b9S9F5NT9TWeFZE8XGGdIu3FucUa2Nm9MAXIgkj-FnA=";
     fetchData('Web Developers');
     function fetchData(query) {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         newtitle.innerHTML = article.title;
         newdesc.innerHTML = article.description;
-        image.src = article.urlToImage || placeholderImage;
+        image.src = article.image || placeholderImage;
 
         cardclone.firstElementChild.addEventListener("click", () => {
             window.open(article.url, "_blank");
