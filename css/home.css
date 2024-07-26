@@ -396,6 +396,23 @@ footer {
   .sidebar {
     opacity: 0;
   }
+ 
+}
+@media (max-width: 750px){
+  .card{
+    flex-direction: column !important;
+    max-height: 300px;
+  }
+  .card img{
+    width: 100%;
+    height: 170px;
+  }
+  .card .dis{
+    opacity: 0 ;
+  }
+  .card .line{
+    font-size: 1.15rem;
+  }
 }
 * {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;}
